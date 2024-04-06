@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QB Brush"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#222222"
+        android:layout_marginVertical="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+        app:layout_constraintBottom_toTopOf="@+id/imgBrushMode">
+
+        <com.apero.qbbrush.QBBrushView
+            android:id="@+id/qbBrush"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/imgBrushMode"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/ic_brush_mode"
+        android:padding="10dp"
+        android:background="#663BFF5B"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtColor"/>
+
+    <ImageView
+        android:id="@+id/imgEraseMode"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/ic_erase_mode"
+        android:padding="10dp"
+        android:background="#66FF3030"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imgBrushMode"
+        app:layout_constraintBottom_toTopOf="@+id/txtColor"/>
+
+    <SeekBar
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/imgEraseMode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgEraseMode"
+        app:layout_constraintBottom_toBottomOf="@+id/imgEraseMode"
+        android:layout_marginHorizontal="10dp"/>
+
+
+    <TextView
+        android:id="@+id/txtColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Color Area"
+        android:background="#2ECF96"
+        android:textAlignment="center"
+        android:layout_margin="20dp"
+        android:paddingVertical="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtExport" />
+
+    <TextView
+        android:id="@+id/txtExport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export"
+        android:textSize="16sp"
+        android:background="@color/primary_color"
+        android:textAlignment="center"
+        android:paddingVertical="10dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
